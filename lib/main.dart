@@ -1,4 +1,7 @@
+import 'package:design_system_mobile/desigSystem/tokens/colors.dart';
+import 'package:design_system_mobile/desigSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
+import 'config/theme/theme_data.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,10 +12,21 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: AppTheme.lightTheme,
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Center(
+            child: Column(
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  label: Text("Boton"),
+                  icon: Icon(Icons.add),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
