@@ -10,6 +10,7 @@ class TypographyGallery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CpText(
             "Typography",
@@ -76,6 +77,7 @@ class TypographyGallery extends StatelessWidget {
           ),
           SizedBox(height: 20),
           CpBlockquote("Irure incididunt nostrud officia eu Lorem."),
+          SizedBox(height: 20),
         ],
       ),
     );
