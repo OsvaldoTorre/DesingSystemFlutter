@@ -9,7 +9,7 @@ class ColorsDS {
   static const Color danger = Color(0xFFDC3545);
   static const Color light = Color(0xFFF8F9FA);
   static const Color dark = Color(0xFF212529);
-
+  
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
 }

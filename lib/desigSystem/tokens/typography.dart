@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class TypographyDS {
+  TypographyDS._();
   // Encabezados
   static const TextStyle h1 = TextStyle(
     fontSize: 40,
@@ -41,7 +42,7 @@ class TypographyDS {
   );
 
   // Cuerpo de texto
-  static const TextStyle bodyLead = TextStyle(
+  static const TextStyle lead = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w300,
     color: ColorsDS.dark,
