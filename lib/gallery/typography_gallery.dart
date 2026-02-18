@@ -2,6 +2,8 @@ import 'package:design_system_mobile/desigSystem/componets/cp_blockquote.dart';
 import 'package:design_system_mobile/desigSystem/componets/cp_text-paragraph_highlight.dart';
 import 'package:design_system_mobile/desigSystem/componets/cp_paragraph.dart';
 import 'package:design_system_mobile/desigSystem/componets/cp_text.dart';
+import 'package:design_system_mobile/desigSystem/componets/cp_text_paragraph.dart';
+import 'package:design_system_mobile/desigSystem/tokens/colors.dart';
 import 'package:design_system_mobile/desigSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
 
@@ -49,9 +51,16 @@ class TypographyGallery extends StatelessWidget {
           // Highlight
           CpParagraph([
             CpTextParagraph(
-              "Hola mundo, el dia de hoy voy hacer un texto para destacar",
+              "Hola mundo, el dia de hoy voy hacer un texto para destacar ",
             ),
-            CpTextParagraph("Ganador", style: TypographyDS.h1),
+            CpTextParagraphHighlight(
+              "Ganador",
+              style: TypographyDS.small,
+              highlightable: true,
+              textColor: ColorsDS.danger,
+              textBold: FontWeight.bold,
+              textItalic: FontStyle.italic,
+            ),
           ]),
           SizedBox(height: 20),
           CpText(
