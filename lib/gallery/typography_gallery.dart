@@ -1,4 +1,5 @@
 import 'package:design_system_mobile/desigSystem/componets/cp_blockquote.dart';
+import 'package:design_system_mobile/desigSystem/componets/cp_highlight.dart';
 import 'package:design_system_mobile/desigSystem/componets/cp_text.dart';
 import 'package:design_system_mobile/desigSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
@@ -44,19 +45,24 @@ class TypographyGallery extends StatelessWidget {
             padding: EdgeInsetsGeometry.only(bottom: 20),
           ),
           SizedBox(height: 20),
+          // Highlight
+          CpHighlight("Highlight 1,"),
+          CpHighlight("Highlight 1,"),
+          CpHighlight("Highlight 1,"),
+          SizedBox(height: 20),
           CpText(
             "Amet aliquip cillum laboris consectetur consequat.",
-            textDecoration: TextDecoration.overline,
+            typeLine: TextDecoration.overline,
             padding: EdgeInsetsGeometry.only(bottom: 5),
           ),
           CpText(
             "Amet aliquip cillum laboris consectetur consequat.",
-            textDecoration: TextDecoration.lineThrough,
+            typeLine: TextDecoration.lineThrough,
             padding: EdgeInsetsGeometry.only(bottom: 5),
           ),
           CpText(
             "Amet aliquip cillum laboris consectetur consequat.",
-            textDecoration: TextDecoration.underline,
+            typeLine: TextDecoration.underline,
             padding: EdgeInsetsGeometry.only(bottom: 5),
           ),
 
@@ -67,12 +73,12 @@ class TypographyGallery extends StatelessWidget {
           ),
           CpText(
             "Bold: Amet aliquip cillum laboris consectetur consequat.",
-            fontWeightBold: FontWeight.bold,
+            textBold: FontWeight.bold,
             padding: EdgeInsetsGeometry.only(bottom: 5),
           ),
           CpText(
             "Italic: Amet aliquip cillum laboris consectetur consequat.",
-            fontStyleItalic: FontStyle.italic,
+            textItalic: FontStyle.italic,
             padding: EdgeInsetsGeometry.only(bottom: 5),
           ),
           SizedBox(height: 20),
