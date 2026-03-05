@@ -1,4 +1,4 @@
-import 'package:flutter/painting.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// SpacingsDS — Escala de espaciado basada en Bootstrap 5
 /// Base: 1rem = 16px

@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'colors.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// GradientsDS - Tokens para gradientes.
 /// Define una colección de gradientes predefinidos para usar en fondos y decoraciones.

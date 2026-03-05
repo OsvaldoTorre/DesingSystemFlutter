@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 class LanguageS {
   LanguageS._();

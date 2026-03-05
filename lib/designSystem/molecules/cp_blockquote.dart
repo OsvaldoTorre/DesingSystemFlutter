@@ -1,8 +1,4 @@
-import 'package:design_system_mobile/designSystem/atoms/cp_text.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
-import 'package:flutter/material.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 class CpBlockquote extends StatelessWidget {
   final String texto;

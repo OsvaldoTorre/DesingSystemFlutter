@@ -1,6 +1,4 @@
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:flutter/widgets.dart';
-import 'package:design_system_mobile/designSystem/tokens/breakpoints.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// CpContainer — Equivalente a .container de Bootstrap
 /// Centra el contenido y aplica max-width según el breakpoint activo.

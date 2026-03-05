@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'colors.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// TypographyDS — Escala tipográfica basada en Bootstrap 5
 /// Preserva todos los estilos existentes y añade utilidades adicionales.

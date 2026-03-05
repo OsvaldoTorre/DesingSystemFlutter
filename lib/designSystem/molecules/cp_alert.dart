@@ -1,73 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:design_system_mobile/designSystem/tokens/borders.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
-
-/// Variante semántica compartida — equivalente a las clases bg-* / alert-*
-enum VariantDS {
-  primary, secondary, success, danger, warning, info, light, dark
-}
-
-// ─── CpBadge ─────────────────────────────────────────────────────────────────
-
-/// CpBadge — Equivalente a <span class="badge bg-*"> de Bootstrap
-///
-/// ```dart
-/// CpBadge(label: 'Nuevo')
-/// CpBadge(label: '3', variant: VariantDS.danger, pill: true)
-/// CpBadge(label: 'Beta', variant: VariantDS.warning)
-/// ```
-class CpBadge extends StatelessWidget {
-  const CpBadge({
-    super.key,
-    required this.label,
-    this.variant = VariantDS.primary,
-    this.pill = false,
-  });
-
-  final String label;
-  final VariantDS variant;
-
-  /// true → usa border-radius cápsula (.rounded-pill)
-  final bool pill;
-
-  Color get _bg => switch (variant) {
-    VariantDS.primary   => ColorsDS.primary,
-    VariantDS.secondary => ColorsDS.secondary,
-    VariantDS.success   => ColorsDS.success,
-    VariantDS.danger    => ColorsDS.danger,
-    VariantDS.warning   => ColorsDS.warning,
-    VariantDS.info      => ColorsDS.info,
-    VariantDS.light     => ColorsDS.light,
-    VariantDS.dark      => ColorsDS.dark,
-  };
-
-  Color get _fg => ColorsDS.contrastOn(_bg);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: _bg,
-        borderRadius: BorderRadius.circular(pill ? RadiusDS.pill : RadiusDS.sm),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: TypographyDS.weightBold,
-          color: _fg,
-          height: 1.2,
-          letterSpacing: 0.5,
-        ),
-      ),
-    );
-  }
-}
-
-// ─── CpAlert ─────────────────────────────────────────────────────────────────
+import 'package:design_system_mobile/design_system.dart';
 
 /// CpAlert — Equivalente a <div class="alert alert-*"> de Bootstrap
 ///
@@ -160,10 +91,13 @@ class CpAlert extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (title != null) ...[
-                  Text(title!,
+                  Text(
+                    title!,
                     style: TypographyDS.body.copyWith(
-                      fontWeight: TypographyDS.weightSemi, color: _fg,
-                    )),
+                      fontWeight: TypographyDS.weightSemi,
+                      color: _fg,
+                    ),
+                  ),
                   const SizedBox(height: SpacingsDS.xs),
                 ],
                 Text(message, style: TypographyDS.body.copyWith(color: _fg)),

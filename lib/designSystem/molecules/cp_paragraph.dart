@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 class CpParagraph extends StatelessWidget {
   final List<InlineSpan> text;

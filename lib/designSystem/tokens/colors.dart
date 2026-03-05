@@ -1,4 +1,4 @@
-import 'package:flutter/painting.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// ColorsDS — Paleta de color basada en Bootstrap 5
 /// Extiende la paleta básica con escala de grises, variantes subtle/emphasis y utilidades.

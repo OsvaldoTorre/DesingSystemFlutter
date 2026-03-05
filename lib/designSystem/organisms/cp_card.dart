@@ -1,8 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:design_system_mobile/designSystem/tokens/borders.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// CpCard — Equivalente a <div class="card"> de Bootstrap
 ///

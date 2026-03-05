@@ -1,6 +1,4 @@
-import 'package:flutter/painting.dart';
-import 'colors.dart';
-
+import 'package:design_system_mobile/design_system.dart';
 /// RadiusDS — Tokens de border-radius basados en Bootstrap 5
 class RadiusDS {
   RadiusDS._();

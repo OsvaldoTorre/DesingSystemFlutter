@@ -1,45 +1,58 @@
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
-import 'package:flutter/material.dart';
+import 'package:design_system_mobile/design_system.dart';
 
+/// CpText — Atom base de texto con soporte para estilos del Design System.
+///
+/// ```dart
+/// CpText('Hola mundo')
+/// CpText('Título', style: TypographyDS.h1)
+/// CpText('Error', color: ColorsDS.danger, textBold: FontWeight.bold)
+/// CpText('Subrayado', typeLine: TextDecoration.underline)
+/// ```
 class CpText extends StatelessWidget {
-  final String texto;
-  // Parametros opcionales
-  final Color color;
-  final TextStyle style;
-  final FontWeight textBold;
-  final FontStyle textItalic;
-  final TextDecoration typeLine;
-  final Color lineColor;
-  final double lineSize;
-  final EdgeInsetsGeometry padding;
-
   const CpText(
-    this.texto, { // Parametros opcionales
+    this.texto, {
     this.color = ColorsDS.dark,
     this.style = TypographyDS.body,
-    this.padding = const EdgeInsetsGeometry.all(0),
+    this.padding = EdgeInsets.zero,
     this.typeLine = TextDecoration.none,
     this.lineColor = ColorsDS.dark,
     this.lineSize = 1,
     this.textBold = FontWeight.normal,
     this.textItalic = FontStyle.normal,
-
+    this.maxLines,
+    this.overflow,
+    this.textAlign,
     super.key,
   });
 
+  final String texto;
+  final Color color;
+  final TextStyle style;
+  final EdgeInsetsGeometry padding;
+  final TextDecoration typeLine;
+  final Color lineColor;
+  final double lineSize;
+  final FontWeight textBold;
+  final FontStyle textItalic;
+  final int? maxLines;
+  final TextOverflow? overflow;
+  final TextAlign? textAlign;
+
   @override
   Widget build(BuildContext context) {
-    Color colorLocal = color;
-    if (colorLocal == ColorsDS.dark) {
-      colorLocal = style.color!;
-    }
+    // Si el color no fue cambiado del default, usa el del estilo
+    final resolvedColor =
+        color == ColorsDS.dark ? (style.color ?? ColorsDS.dark) : color;
+
     return Padding(
       padding: padding,
       child: Text(
         texto,
+        maxLines: maxLines,
+        overflow: overflow,
+        textAlign: textAlign,
         style: style.copyWith(
-          color: colorLocal,
+          color: resolvedColor,
           fontWeight: textBold,
           fontStyle: textItalic,
           decoration: typeLine,

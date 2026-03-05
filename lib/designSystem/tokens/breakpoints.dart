@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// BreakpointsDS — Sistema de breakpoints responsivos al estilo Bootstrap 5
 ///

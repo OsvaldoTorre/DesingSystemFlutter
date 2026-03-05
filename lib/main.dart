@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
           // ─── Integra los temas del Design System ──────────────────────────
           theme: AppThemeDS.light(),
           darkTheme: AppThemeDS.dark(),
-          themeMode: ThemeMode.system,
+          themeMode: ThemeMode.light,
           home: const _ShowcasePage(),
         );
       },
@@ -75,33 +75,32 @@ class _ShowcasePageState extends State<_ShowcasePage> {
             const SizedBox(height: SpacingsDS.s4),
 
             // ─── Tipografía ──────────────────────────────────────────────────
-            Text('Typography', style: TypographyDS.h2),
+            CpText('Typography', style: TypographyDS.h2),
             const SizedBox(height: SpacingsDS.s2),
+            CpText('Display Large', style: TypographyDS.displaySm),
+            CpText('H1 Heading', style: TypographyDS.h1),
+            CpText('H2 Heading', style: TypographyDS.h2),
+            CpText('H3 Heading', style: TypographyDS.h3),
+            CpText('H4 Heading', style: TypographyDS.h4),
+            CpText('H5 Heading', style: TypographyDS.h5),
+            CpText('H6 Heading', style: TypographyDS.h6),
+            const SizedBox(height: SpacingsDS.s2),
+            CpText('Lead — Paragraph introductivo', style: TypographyDS.lead),
             CpText(
-              'Display Large',
-              color: ColorsDS.white,
-              style: TypographyDS.displaySm,
-            ),
-            Text('H1 Heading', style: TypographyDS.h1),
-            Text('H2 Heading', style: TypographyDS.h2),
-            Text('H3 Heading', style: TypographyDS.h3),
-            Text('H4 Heading', style: TypographyDS.h4),
-            Text('H5 Heading', style: TypographyDS.h5),
-            Text('H6 Heading', style: TypographyDS.h6),
-            const SizedBox(height: SpacingsDS.s2),
-            Text('Lead — Paragraph introductivo', style: TypographyDS.lead),
-            Text(
               'Body — Texto de cuerpo estándar de 16px.',
               style: TypographyDS.body,
             ),
-            Text('Small — Texto de apoyo en 14px.', style: TypographyDS.small),
-            Text('LABEL · UPPERCASE', style: TypographyDS.label),
-            Text('Caption — 10px auxiliar', style: TypographyDS.caption),
+            CpText(
+              'Small — Texto de apoyo en 14px.',
+              style: TypographyDS.small,
+            ),
+            CpText('LABEL · UPPERCASE', style: TypographyDS.label),
+            CpText('Caption — 10px auxiliar', style: TypographyDS.caption),
 
             const Divider(height: SpacingsDS.xl),
 
             // ─── Colores ─────────────────────────────────────────────────────
-            Text(LanguageS.get(TextApp.colors), style: TypographyDS.h2),
+            CpText(LanguageS.get(TextApp.colors), style: TypographyDS.h2),
             const SizedBox(height: SpacingsDS.s2),
             Wrap(
               spacing: SpacingsDS.sm,
@@ -121,7 +120,7 @@ class _ShowcasePageState extends State<_ShowcasePage> {
             const Divider(height: SpacingsDS.xl),
 
             // ─── Botones ─────────────────────────────────────────────────────
-            Text(LanguageS.get(TextApp.buttons), style: TypographyDS.h2),
+            CpText(LanguageS.get(TextApp.buttons), style: TypographyDS.h2),
             const SizedBox(height: SpacingsDS.s2),
             Wrap(
               spacing: SpacingsDS.sm,
@@ -243,6 +242,12 @@ class _ShowcasePageState extends State<_ShowcasePage> {
                           pill: true,
                         ),
                       ),
+                      footer: CpCardFooter(
+                        child: Text(
+                          'Actualizado hace 5 min',
+                          style: TypographyDS.caption,
+                        ),
+                      ),
                       child: CpCardBody(
                         title: 'Gestión de acceso',
                         text: 'Administra los permisos del sistema.',
@@ -253,12 +258,6 @@ class _ShowcasePageState extends State<_ShowcasePage> {
                             onPressed: () {},
                           ),
                         ],
-                      ),
-                      footer: CpCardFooter(
-                        child: Text(
-                          'Actualizado hace 5 min',
-                          style: TypographyDS.caption,
-                        ),
                       ),
                     ),
                   ),
