@@ -13,7 +13,7 @@ class CpTextParagraphHighlight extends TextSpan {
 
   CpTextParagraphHighlight(
     this.texthighlight, {
-    TextStyle style = TypographyDS.body,
+    TextStyle? style,
     this.highlightable = false,
     this.textColor,
     this.backgroundColor = ColorsDS.white,
@@ -24,7 +24,7 @@ class CpTextParagraphHighlight extends TextSpan {
     this.lineSize = 1,
   }) : super(
          text: texthighlight,
-         style: style.copyWith(
+         style: (style ?? TypographyDS.body).copyWith(
            color: textColor,
            backgroundColor: highlightable ? ColorsDS.warning : backgroundColor,
            fontWeight: textBold,

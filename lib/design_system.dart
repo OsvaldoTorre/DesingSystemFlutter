@@ -79,3 +79,8 @@ export 'package:design_system_mobile/designSystem/organisms/cp_bottom_sheet.dart
 export 'package:design_system_mobile/designSystem/organisms/cp_table.dart';
 export 'package:design_system_mobile/designSystem/organisms/cp_stepper.dart';
 export 'package:design_system_mobile/designSystem/organisms/cp_data_list.dart';
+
+// ─── Feedback ─────────────────────────────────────────────────────────────────
+export 'package:design_system_mobile/designSystem/feedback/cp_loading_overlay.dart';
+export 'package:design_system_mobile/designSystem/feedback/cp_error_boundary.dart';
+export 'package:design_system_mobile/designSystem/feedback/cp_shimmer_list.dart';
