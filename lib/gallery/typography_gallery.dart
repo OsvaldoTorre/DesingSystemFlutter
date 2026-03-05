@@ -1,10 +1,10 @@
-import 'package:design_system_mobile/desigSystem/componets/cp_blockquote.dart';
-import 'package:design_system_mobile/desigSystem/componets/cp_text-paragraph_highlight.dart';
-import 'package:design_system_mobile/desigSystem/componets/cp_paragraph.dart';
-import 'package:design_system_mobile/desigSystem/componets/cp_text.dart';
-import 'package:design_system_mobile/desigSystem/componets/cp_text_paragraph.dart';
-import 'package:design_system_mobile/desigSystem/tokens/colors.dart';
-import 'package:design_system_mobile/desigSystem/tokens/typography.dart';
+import 'package:design_system_mobile/designSystem/components/cp_blockquote.dart';
+import 'package:design_system_mobile/designSystem/components/cp_text-paragraph_highlight.dart';
+import 'package:design_system_mobile/designSystem/components/cp_paragraph.dart';
+import 'package:design_system_mobile/designSystem/components/cp_text.dart';
+import 'package:design_system_mobile/designSystem/components/cp_text_paragraph.dart';
+import 'package:design_system_mobile/designSystem/tokens/colors.dart';
+import 'package:design_system_mobile/designSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
 
 class TypographyGallery extends StatelessWidget {

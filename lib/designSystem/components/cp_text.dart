@@ -1,5 +1,5 @@
-import 'package:design_system_mobile/desigSystem/tokens/colors.dart';
-import 'package:design_system_mobile/desigSystem/tokens/typography.dart';
+import 'package:design_system_mobile/designSystem/tokens/colors.dart';
+import 'package:design_system_mobile/designSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
 
 class CpText extends StatelessWidget {
