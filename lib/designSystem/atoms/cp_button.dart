@@ -1,14 +1,26 @@
-import 'package:flutter/material.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:design_system_mobile/designSystem/tokens/borders.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
+import 'package:design_system_mobile/designSystem/tokens/icon_sizes.dart';
+
+import 'package:design_system_mobile/design_system.dart';
 
 /// Variantes de botón — equivalente btn-primary, btn-outline-*, etc.
 enum ButtonVariantDS {
-  primary, secondary, success, danger, warning, info, light, dark, link,
-  outlinePrimary, outlineSecondary, outlineSuccess, outlineDanger,
-  outlineWarning, outlineInfo, outlineLight, outlineDark,
+  primary,
+  secondary,
+  success,
+  danger,
+  warning,
+  info,
+  light,
+  dark,
+  link,
+  outlinePrimary,
+  outlineSecondary,
+  outlineSuccess,
+  outlineDanger,
+  outlineWarning,
+  outlineInfo,
+  outlineLight,
+  outlineDark,
 }
 
 /// Tamaños de botón — equivalente btn-sm, btn, btn-lg
@@ -51,27 +63,27 @@ class CpButton extends StatelessWidget {
 
   // ─── Helpers ────────────────────────────────────────────────────────────────
   bool get _isOutline => variant.name.startsWith('outline');
-  bool get _isLink    => variant == ButtonVariantDS.link;
+  bool get _isLink => variant == ButtonVariantDS.link;
   bool get _isEnabled => !disabled && !loading && onPressed != null;
 
   Color get _mainColor => switch (variant) {
-    ButtonVariantDS.primary          => ColorsDS.primary,
-    ButtonVariantDS.secondary        => ColorsDS.secondary,
-    ButtonVariantDS.success          => ColorsDS.success,
-    ButtonVariantDS.danger           => ColorsDS.danger,
-    ButtonVariantDS.warning          => ColorsDS.warning,
-    ButtonVariantDS.info             => ColorsDS.info,
-    ButtonVariantDS.light            => ColorsDS.light,
-    ButtonVariantDS.dark             => ColorsDS.dark,
-    ButtonVariantDS.link             => ColorsDS.link,
-    ButtonVariantDS.outlinePrimary   => ColorsDS.primary,
+    ButtonVariantDS.primary => ColorsDS.primary,
+    ButtonVariantDS.secondary => ColorsDS.secondary,
+    ButtonVariantDS.success => ColorsDS.success,
+    ButtonVariantDS.danger => ColorsDS.danger,
+    ButtonVariantDS.warning => ColorsDS.warning,
+    ButtonVariantDS.info => ColorsDS.info,
+    ButtonVariantDS.light => ColorsDS.light,
+    ButtonVariantDS.dark => ColorsDS.dark,
+    ButtonVariantDS.link => ColorsDS.link,
+    ButtonVariantDS.outlinePrimary => ColorsDS.primary,
     ButtonVariantDS.outlineSecondary => ColorsDS.secondary,
-    ButtonVariantDS.outlineSuccess   => ColorsDS.success,
-    ButtonVariantDS.outlineDanger    => ColorsDS.danger,
-    ButtonVariantDS.outlineWarning   => ColorsDS.warning,
-    ButtonVariantDS.outlineInfo      => ColorsDS.info,
-    ButtonVariantDS.outlineLight     => ColorsDS.light,
-    ButtonVariantDS.outlineDark      => ColorsDS.dark,
+    ButtonVariantDS.outlineSuccess => ColorsDS.success,
+    ButtonVariantDS.outlineDanger => ColorsDS.danger,
+    ButtonVariantDS.outlineWarning => ColorsDS.warning,
+    ButtonVariantDS.outlineInfo => ColorsDS.info,
+    ButtonVariantDS.outlineLight => ColorsDS.light,
+    ButtonVariantDS.outlineDark => ColorsDS.dark,
   };
 
   Color get _bgColor {
@@ -81,7 +93,8 @@ class CpButton extends StatelessWidget {
 
   Color get _fgColor {
     if (_isOutline || _isLink) return _mainColor;
-    if (variant == ButtonVariantDS.warning || variant == ButtonVariantDS.light) {
+    if (variant == ButtonVariantDS.warning ||
+        variant == ButtonVariantDS.light) {
       return ColorsDS.gray900;
     }
     return ColorsDS.white;
@@ -100,9 +113,9 @@ class CpButton extends StatelessWidget {
   };
 
   double get _iconSize => switch (size) {
-    ButtonSizeDS.sm => 14,
-    ButtonSizeDS.md => 16,
-    ButtonSizeDS.lg => 20,
+    ButtonSizeDS.sm => IconSizesDS.sm,
+    ButtonSizeDS.md => IconSizesDS.md,
+    ButtonSizeDS.lg => IconSizesDS.lg,
   };
 
   // ─── Build ──────────────────────────────────────────────────────────────────
@@ -120,7 +133,8 @@ class CpButton extends StatelessWidget {
       children: [
         if (loading) ...[
           SizedBox(
-            width: _iconSize, height: _iconSize,
+            width: _iconSize,
+            height: _iconSize,
             child: CircularProgressIndicator(strokeWidth: 2, color: fgColor),
           ),
           const SizedBox(width: SpacingsDS.xs),
@@ -134,8 +148,10 @@ class CpButton extends StatelessWidget {
             fontSize: _fontSize,
             fontWeight: TypographyDS.weightMedium,
             color: fgColor,
-            decoration: _isLink ? TextDecoration.underline : TextDecoration.none,
-            letterSpacing: 0.5,
+            decoration: _isLink
+                ? TextDecoration.underline
+                : TextDecoration.none,
+            letterSpacing: TypographyDS.trackingWide,
           ),
         ),
         if (suffixIcon != null && !loading) ...[
@@ -146,7 +162,7 @@ class CpButton extends StatelessWidget {
     );
 
     return Opacity(
-      opacity: _isEnabled ? 1.0 : 0.65,
+      opacity: _isEnabled ? 1.0 : OpacityDS.disabled,
       child: Material(
         color: bgColor,
         borderRadius: RadiusDS.borderMd,

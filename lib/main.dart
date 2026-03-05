@@ -1,6 +1,4 @@
-import 'package:design_system_mobile/config/language/language_selector.dart';
 import 'package:design_system_mobile/design_system.dart';
-import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,7 +15,7 @@ class MainApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           // ─── Integra los temas del Design System ──────────────────────────
-          theme:     AppThemeDS.light(),
+          theme: AppThemeDS.light(),
           darkTheme: AppThemeDS.dark(),
           themeMode: ThemeMode.system,
           home: const _ShowcasePage(),
@@ -45,7 +43,11 @@ class _ShowcasePageState extends State<_ShowcasePage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: SpacingsDS.md),
-            child: CpBadge(label: 'v0.1', variant: VariantDS.primary, pill: true),
+            child: CpBadge(
+              label: 'v0.1',
+              variant: VariantDS.primary,
+              pill: false,
+            ),
           ),
         ],
       ),
@@ -53,20 +55,21 @@ class _ShowcasePageState extends State<_ShowcasePage> {
         child: ListView(
           padding: const EdgeInsets.all(SpacingsDS.s3),
           children: [
-
             // ─── Selector de idioma ──────────────────────────────────────────
             Wrap(
               spacing: SpacingsDS.sm,
-              children: ['es', 'en', 'pt', 'de'].map((lang) =>
-                CpButton(
-                  label: lang.toUpperCase(),
-                  size: ButtonSizeDS.sm,
-                  variant: LanguageS.currentLang.value == lang
-                      ? ButtonVariantDS.primary
-                      : ButtonVariantDS.outlinePrimary,
-                  onPressed: () => LanguageS.currentLang.value = lang,
-                ),
-              ).toList(),
+              children: ['es', 'en', 'pt', 'de']
+                  .map(
+                    (lang) => CpButton(
+                      label: lang.toUpperCase(),
+                      size: ButtonSizeDS.sm,
+                      variant: LanguageS.currentLang.value == lang
+                          ? ButtonVariantDS.primary
+                          : ButtonVariantDS.outlinePrimary,
+                      onPressed: () => LanguageS.currentLang.value = lang,
+                    ),
+                  )
+                  .toList(),
             ),
 
             const SizedBox(height: SpacingsDS.s4),
@@ -74,7 +77,11 @@ class _ShowcasePageState extends State<_ShowcasePage> {
             // ─── Tipografía ──────────────────────────────────────────────────
             Text('Typography', style: TypographyDS.h2),
             const SizedBox(height: SpacingsDS.s2),
-            Text('Display Large', style: TypographyDS.displaySm),
+            CpText(
+              'Display Large',
+              color: ColorsDS.white,
+              style: TypographyDS.displaySm,
+            ),
             Text('H1 Heading', style: TypographyDS.h1),
             Text('H2 Heading', style: TypographyDS.h2),
             Text('H3 Heading', style: TypographyDS.h3),
@@ -83,7 +90,10 @@ class _ShowcasePageState extends State<_ShowcasePage> {
             Text('H6 Heading', style: TypographyDS.h6),
             const SizedBox(height: SpacingsDS.s2),
             Text('Lead — Paragraph introductivo', style: TypographyDS.lead),
-            Text('Body — Texto de cuerpo estándar de 16px.', style: TypographyDS.body),
+            Text(
+              'Body — Texto de cuerpo estándar de 16px.',
+              style: TypographyDS.body,
+            ),
             Text('Small — Texto de apoyo en 14px.', style: TypographyDS.small),
             Text('LABEL · UPPERCASE', style: TypographyDS.label),
             Text('Caption — 10px auxiliar', style: TypographyDS.caption),
@@ -97,14 +107,14 @@ class _ShowcasePageState extends State<_ShowcasePage> {
               spacing: SpacingsDS.sm,
               runSpacing: SpacingsDS.sm,
               children: [
-                _ColorChip('primary',   ColorsDS.primary),
+                _ColorChip('primary', ColorsDS.primary),
                 _ColorChip('secondary', ColorsDS.secondary),
-                _ColorChip('success',   ColorsDS.success),
-                _ColorChip('danger',    ColorsDS.danger),
-                _ColorChip('warning',   ColorsDS.warning),
-                _ColorChip('info',      ColorsDS.info),
-                _ColorChip('light',     ColorsDS.light),
-                _ColorChip('dark',      ColorsDS.dark),
+                _ColorChip('success', ColorsDS.success),
+                _ColorChip('danger', ColorsDS.danger),
+                _ColorChip('warning', ColorsDS.warning),
+                _ColorChip('info', ColorsDS.info),
+                _ColorChip('light', ColorsDS.light),
+                _ColorChip('dark', ColorsDS.dark),
               ],
             ),
 
@@ -117,12 +127,32 @@ class _ShowcasePageState extends State<_ShowcasePage> {
               spacing: SpacingsDS.sm,
               runSpacing: SpacingsDS.sm,
               children: [
-                CpButton(label: 'Primary',   onPressed: () {}),
-                CpButton(label: 'Secondary', variant: ButtonVariantDS.secondary, onPressed: () {}),
-                CpButton(label: 'Success',   variant: ButtonVariantDS.success,   onPressed: () {}),
-                CpButton(label: 'Danger',    variant: ButtonVariantDS.danger,    onPressed: () {}),
-                CpButton(label: 'Warning',   variant: ButtonVariantDS.warning,   onPressed: () {}),
-                CpButton(label: 'Info',      variant: ButtonVariantDS.info,      onPressed: () {}),
+                CpButton(label: 'Primary', onPressed: () {}),
+                CpButton(
+                  label: 'Secondary',
+                  variant: ButtonVariantDS.secondary,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Success',
+                  variant: ButtonVariantDS.success,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Danger',
+                  variant: ButtonVariantDS.danger,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Warning',
+                  variant: ButtonVariantDS.warning,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Info',
+                  variant: ButtonVariantDS.info,
+                  onPressed: () {},
+                ),
               ],
             ),
             const SizedBox(height: SpacingsDS.sm),
@@ -130,16 +160,37 @@ class _ShowcasePageState extends State<_ShowcasePage> {
               spacing: SpacingsDS.sm,
               runSpacing: SpacingsDS.sm,
               children: [
-                CpButton(label: 'Outline',   variant: ButtonVariantDS.outlinePrimary, onPressed: () {}),
-                CpButton(label: 'Small',     size: ButtonSizeDS.sm, onPressed: () {}),
-                CpButton(label: 'Large',     size: ButtonSizeDS.lg, onPressed: () {}),
-                CpButton(label: 'Loading',   loading: true, onPressed: null),
-                CpButton(label: 'Disabled',  disabled: true, onPressed: () {}),
-                CpButton(label: 'Link',      variant: ButtonVariantDS.link, onPressed: () {}),
+                CpButton(
+                  label: 'Outline',
+                  variant: ButtonVariantDS.outlinePrimary,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Small',
+                  size: ButtonSizeDS.sm,
+                  onPressed: () {},
+                ),
+                CpButton(
+                  label: 'Large',
+                  size: ButtonSizeDS.lg,
+                  onPressed: () {},
+                ),
+                CpButton(label: 'Loading', loading: true, onPressed: null),
+                CpButton(label: 'Disabled', disabled: true, onPressed: () {}),
+                CpButton(
+                  label: 'Link',
+                  variant: ButtonVariantDS.link,
+                  onPressed: () {},
+                ),
               ],
             ),
             const SizedBox(height: SpacingsDS.sm),
-            CpButton(label: 'Full Width', fullWidth: true, prefixIcon: Icons.save, onPressed: () {}),
+            CpButton(
+              label: 'Full Width',
+              fullWidth: true,
+              prefixIcon: Icons.save,
+              onPressed: () {},
+            ),
 
             const Divider(height: SpacingsDS.xl),
 
@@ -155,7 +206,10 @@ class _ShowcasePageState extends State<_ShowcasePage> {
                 onDismiss: () => setState(() => _showAlert = false),
               ),
             const SizedBox(height: SpacingsDS.sm),
-            CpAlert(message: 'Esta es una alerta de información.', variant: VariantDS.info),
+            CpAlert(
+              message: 'Esta es una alerta de información.',
+              variant: VariantDS.info,
+            ),
             const SizedBox(height: SpacingsDS.sm),
             CpAlert(
               title: 'Advertencia',
@@ -178,24 +232,39 @@ class _ShowcasePageState extends State<_ShowcasePage> {
               child: CpRow(
                 children: [
                   CpCol(
-                    xs: 12, md: 6,
+                    xs: 12,
+                    md: 6,
                     child: CpCard(
                       header: CpCardHeader(
                         title: 'Usuarios',
-                        trailing: CpBadge(label: '12', variant: VariantDS.success, pill: true),
+                        trailing: CpBadge(
+                          label: '12',
+                          variant: VariantDS.success,
+                          pill: true,
+                        ),
                       ),
                       child: CpCardBody(
                         title: 'Gestión de acceso',
                         text: 'Administra los permisos del sistema.',
                         actions: [
-                          CpButton(label: 'Ver todos', size: ButtonSizeDS.sm, onPressed: () {}),
+                          CpButton(
+                            label: 'Ver todos',
+                            size: ButtonSizeDS.sm,
+                            onPressed: () {},
+                          ),
                         ],
                       ),
-                      footer: CpCardFooter(child: Text('Actualizado hace 5 min', style: TypographyDS.caption)),
+                      footer: CpCardFooter(
+                        child: Text(
+                          'Actualizado hace 5 min',
+                          style: TypographyDS.caption,
+                        ),
+                      ),
                     ),
                   ),
                   CpCol(
-                    xs: 12, md: 6,
+                    xs: 12,
+                    md: 6,
                     child: CpCard(
                       header: const CpCardHeader(title: 'Estadísticas'),
                       child: CpCardBody(
@@ -203,7 +272,12 @@ class _ShowcasePageState extends State<_ShowcasePage> {
                         title: '2,540 visitas',
                         text: 'Un incremento del 12% respecto al mes anterior.',
                         actions: [
-                          CpButton(label: 'Ver reporte', size: ButtonSizeDS.sm, variant: ButtonVariantDS.outlinePrimary, onPressed: () {}),
+                          CpButton(
+                            label: 'Ver reporte',
+                            size: ButtonSizeDS.sm,
+                            variant: ButtonVariantDS.outlinePrimary,
+                            onPressed: () {},
+                          ),
                         ],
                       ),
                     ),
@@ -251,29 +325,62 @@ class _ShowcasePageState extends State<_ShowcasePage> {
 
             const Divider(height: SpacingsDS.xl),
 
+            // ─── Avatars ─────────────────────────────────────────────────────
+            Text('Avatars', style: TypographyDS.h2),
+            const SizedBox(height: SpacingsDS.s2),
+            Wrap(
+              spacing: SpacingsDS.md,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                CpAvatar(size: AvatarSizeDS.sm, name: 'Bruce Wayne'),
+                CpAvatar(size: AvatarSizeDS.md, name: 'Clark Kent'),
+                CpAvatar(size: AvatarSizeDS.lg, name: 'Diana Prince'),
+                CpAvatar(
+                  size: AvatarSizeDS.lg,
+                  imageUrl: 'https://i.pravatar.cc/150?u=wonderwoman',
+                  name: 'Diana Prince',
+                ),
+              ],
+            ),
+
+            const Divider(height: SpacingsDS.xl),
+
             // ─── Spacings ────────────────────────────────────────────────────
             Text(LanguageS.get(TextApp.spacings), style: TypographyDS.h2),
             const SizedBox(height: SpacingsDS.s2),
-            ...['s1 (4px)', 's2 (8px)', 's3 (16px)', 's4 (24px)', 's5 (48px)']
-                .asMap()
-                .entries
-                .map((e) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(e.value, style: TypographyDS.caption),
-                    const SizedBox(height: 2),
-                    Container(
-                      height: [SpacingsDS.s1, SpacingsDS.s2, SpacingsDS.s3, SpacingsDS.s4, SpacingsDS.s5][e.key],
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: ColorsDS.primarySubtle,
-                        borderRadius: RadiusDS.borderSm,
-                        border: Border.all(color: ColorsDS.primary.withValues(alpha: 0.3)),
+            ...[
+              's1 (4px)',
+              's2 (8px)',
+              's3 (16px)',
+              's4 (24px)',
+              's5 (48px)',
+            ].asMap().entries.map(
+              (e) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(e.value, style: TypographyDS.caption),
+                  const SizedBox(height: 2),
+                  Container(
+                    height: [
+                      SpacingsDS.s1,
+                      SpacingsDS.s2,
+                      SpacingsDS.s3,
+                      SpacingsDS.s4,
+                      SpacingsDS.s5,
+                    ][e.key],
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: ColorsDS.primarySubtle,
+                      borderRadius: RadiusDS.borderSm,
+                      border: Border.all(
+                        color: ColorsDS.primary.withOpacity(0.3),
                       ),
                     ),
-                    const SizedBox(height: SpacingsDS.sm),
-                  ],
-                )),
+                  ),
+                  const SizedBox(height: SpacingsDS.sm),
+                ],
+              ),
+            ),
 
             const SizedBox(height: SpacingsDS.xl),
           ],
@@ -295,7 +402,8 @@ class _ColorChip extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          width: 56, height: 40,
+          width: 56,
+          height: 40,
           decoration: BoxDecoration(
             color: color,
             borderRadius: RadiusDS.borderSm,

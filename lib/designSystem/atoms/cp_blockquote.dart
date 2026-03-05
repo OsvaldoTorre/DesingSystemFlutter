@@ -1,4 +1,4 @@
-import 'package:design_system_mobile/designSystem/componets/cp_text.dart';
+import 'package:design_system_mobile/designSystem/atoms/cp_text.dart';
 import 'package:design_system_mobile/designSystem/tokens/colors.dart';
 import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
 import 'package:design_system_mobile/designSystem/tokens/typography.dart';

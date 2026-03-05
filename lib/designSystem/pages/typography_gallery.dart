@@ -1,11 +1,5 @@
-import 'package:design_system_mobile/designSystem/componets/cp_blockquote.dart';
-import 'package:design_system_mobile/designSystem/componets/cp_text-paragraph_highlight.dart';
-import 'package:design_system_mobile/designSystem/componets/cp_paragraph.dart';
-import 'package:design_system_mobile/designSystem/componets/cp_text.dart';
-import 'package:design_system_mobile/designSystem/componets/cp_text_paragraph.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 class TypographyGallery extends StatelessWidget {
   const TypographyGallery({super.key});

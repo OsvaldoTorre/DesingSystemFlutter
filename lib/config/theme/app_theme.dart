@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:design_system_mobile/designSystem/tokens/colors.dart';
-import 'package:design_system_mobile/designSystem/tokens/typography.dart';
-import 'package:design_system_mobile/designSystem/tokens/spacings.dart';
-import 'package:design_system_mobile/designSystem/tokens/borders.dart';
+import 'package:design_system_mobile/design_system.dart';
 
 /// AppThemeDS — Genera ThemeData para MaterialApp usando los tokens del Design System.
 ///
@@ -163,12 +160,11 @@ class AppThemeDS {
       );
 
   static CardThemeData _cardTheme({bool dark = false}) => CardThemeData(
-    elevation: 0,
-    color: dark ? ColorsDS.gray800 : ColorsDS.white,
-    shape: RoundedRectangleBorder(
-      borderRadius: RadiusDS.borderMd,
-      side: BorderSide(color: dark ? ColorsDS.gray700 : ColorsDS.gray200),
-    ),
-    margin: const EdgeInsets.all(SpacingsDS.s3),
-  );
+        elevation: 0,
+        color: dark ? ColorsDS.gray800 : ColorsDS.white,
+        shape: RoundedRectangleBorder(borderRadius: RadiusDS.borderMd),
+        margin: EdgeInsets.zero, // El espaciado lo controla el Grid (CpCol)
+        clipBehavior: Clip.antiAlias,
+        shadowColor: dark ? Colors.black : ColorsDS.gray200,
+      );
 }
